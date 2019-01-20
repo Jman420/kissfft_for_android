@@ -17,4 +17,4 @@ By default the [build_kissfft.ps1](build_kissfft.ps1) script will compile a Shar
 The default configuration for KissFFT contained within the kiss_fft.h file will compile FFTW with single precision.  This means that all of the KissFFT methods will use float data type for their calculations and parameters.  This is because Android AudioFlinger currently provides and expects float32 as the largest data type it will handle.
 
 To build KissFFT with a different precision simply change the data type in the following line in kiss_fft.h and re-run [build_kissfft.ps1](build_kissfft.ps1) :
-  - #   define kiss_fft_scalar float
+  - #define kiss_fft_scalar float
