@@ -130,9 +130,9 @@ foreach ($sourceDir in $sourceDirectories) {
     Push-Location $RootSourcePath/$sourceDir
     $includeFiles = (Get-ChildItem -Path $IncludeFilePattern).FullName | Resolve-Path -Relative
     foreach ($includeFile in $includeFiles) {
-        $fileDestination = "../$IncludeFileDest/$includeFile"
+        $fileDestination = "../../$IncludeFileDest/$includeFile"
         New-Item -Force $fileDestination
         Copy-Item -Force $includeFile -Destination $fileDestination
     }
+    Pop-Location
 }
-Pop-Location
